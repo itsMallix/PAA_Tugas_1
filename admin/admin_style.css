@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Rubik:wght@500;600&display=swap');
+
+:root{
+    --header-height: 3.5rem;
+
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --first-color: rgb(255, 110, 49);
+    --first-color-alt:rgb(252, 134, 84);
+    --title-color:rgb(247, 245, 242);
+    --white-color: rgb(255, 255, 255);
+    --body-color: rgb(27, 37, 44);
+    --container-color: rgb(43, 49, 53);
+  
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: "Poppins", sans-serif;
+    --title-font: "Lora", serif;
+    --subtitle-font: "Dancing Script", cursive;
+    --home--font: 'Rubik', sans-serif;
+    --biggest-font-size: 2.25rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+  
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-semi-bold: 600;
+  
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+@media screen and (min-width: 1024px) {
+    :root {
+      --biggest-font-size: 4rem;
+      --h1-font-size: 2.25rem;
+      --h2-font-size: 1.5rem;
+      --h3-font-size: 1.25rem;
+      --normal-font-size: 1rem;
+      --small-font-size: .875rem;
+      --smaller-font-size: .813rem;
+    }
+}
+/*=============== BASE ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+    transition: background 0.4s; /* for dark mode animation */
+  }
+  
+  h1, h2, h3 {
+    font-weight: var(--font-medium);
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+    max-width: 100%;
+   /* margin-inline: 1.5rem; */
+  }
+  
+  .main {
+    overflow: hidden; /* For the animations */
+  }
+  .grid{
+    display: grid;
+  }
+  .flex{
+    display: flex;
+  }
+
+/*=============== LOGIN ===============*/
+.login__container,.sign__container{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+.login__left,.login__right,.sign__right,.sign__left{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login__left,.sign__left{
+  height: 200px;
+  background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5))
+  , url('../asset/login_img.jpg');
+  background-size: cover;
+  background-position: center;
+  flex-direction: column;
+  color: var(--title-color);
+  margin-bottom: 2rem;
+}
+.login__left h1,.sign__left h1{
+  font-weight: 600;
+}
+.login__right,.sign__right{
+  flex-direction: column;
+  
+}
+.login__right img,.sign__right img{
+  width: 120px;
+  margin-bottom: 2rem;
+}
+.title__header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--title-color);
+  padding-bottom: 1rem;
+}
+.title__header h2{
+  font-weight: 600;
+}
+.sign__up{
+  display: block;
+  padding: .8rem 1.5rem;
+  border-radius: .5rem;
+  border: 1px solid white;
+  width: 300px;
+  color: var(--title-color);
+  background: var(--body-color);
+  cursor: pointer;
+  margin-bottom: 2rem;
+  transition: background .3s;
+}
+.sign__text{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+}
+.sign__text i{
+  font-size: 1.5rem;
+}
+.sign__up:hover{
+  background: var(--title-color);
+  color: var(--body-color);
+}
+.log__input{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--title-color);
+}
+.input__box{
+  display: flex;
+  align-items: center;
+  margin-bottom: .5rem;
+}
+.input__box input{
+  outline: none;
+  border: none;
+  padding: .8rem 2rem .8rem 2rem;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  color: var(--first-color);
+  background: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 1);
+}
+.input__box input:focus,
+.input__box input:valid{
+  border-color: var(--first-color);
+}
+.input__box i{
+  position: absolute;
+  font-size: 1.5rem;
+  color: var(--title-color);
+}
+.forgot{
+  color: var(--title-color);
+  padding-bottom: 2rem;
+}
+.log__in,.sign__in{
+  display: block;
+  padding: .8rem 1.5rem;
+  border-radius: .5rem;
+  font-size: 16px;
+  border: none;
+  width: 300px;
+  color: var(--title-color);
+  background: var(--first-color);
+  cursor: pointer;
+  transition: background .3s;
+}
+.sign__in{
+    margin-top: 2rem;
+}
+.log__in input,.sign__in input{
+  display: flex;
+  justify-content: center;
+  border: none;
+  background: none;
+}
+.text__sign-up{
+  padding-top: .5rem;
+}
+.text__login{
+    padding-top: .5rem;
+}
+.reg__now,.log__now{
+  color: var(--first-color);
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .login__container{
+    flex-direction: row;
+    height: 100vh;
+    margin-bottom: 0;
+  }
+  .login__left,.login__right{
+    display: flex;
+    width: 50%;
+    height: auto;
+    margin-bottom: 0;
+  }
+  
+}

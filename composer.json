@@ -1,0 +1,18 @@
+{
+    "name": "lenovo/tugas_paa",
+    "description": "JWT Login",
+    "autoload": {
+        "psr-4": {
+            "Lenovo\\TugasPaa\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Zamzamillham",
+            "email": "zamzamilham17@gmail.com"
+        }
+    ],
+    "require": {
+        "firebase/php-jwt": "^6.4"
+    }
+}
